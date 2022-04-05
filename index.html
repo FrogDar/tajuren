@@ -8,6 +8,7 @@
   <meta name="description" content="虽居于塔，不仅塔居">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
   <link rel="icon" href="frogsoft.svg">
 </head>
 
@@ -33,6 +34,15 @@
             count: 0
           };
         },
+      },
+      Valine: {
+        appId: 'B7fPBSged1R1J69thumXHoNB-gzGzoHsz',
+        appKey: 'tB84HEkym86cyVJGYEMuY4Sw',
+        enableQQ: true,
+        avatar: 'wavatar',
+        lang:'zh-CN',
+        visitor: true
+        // docPath: 'hash', //default to `hash` ,or you can choose `full`
       }
     }
   </script>
@@ -40,6 +50,8 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
   <script src="//cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script src="//unpkg.com/docsify-valine/dist/docsify-valine.min.js"></script>
 </body>
 
 </html>
