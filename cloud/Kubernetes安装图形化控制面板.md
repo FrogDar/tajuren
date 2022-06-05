@@ -4,13 +4,13 @@
 
 我们可以很容易地在[官方文档](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)中找到开启控制面板的配置文件名并应用:
 
-```
+```shell
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.5.0/aio/deploy/recommended.yaml
 ```
 
 随后我们通过 `kubectl` 提供的代理的方式访问控制面板。执行命令（该命令将占用一个终端）：
 
-```
+```shell
 kubectl proxy
 ```
 
