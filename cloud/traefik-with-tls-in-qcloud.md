@@ -16,7 +16,7 @@ HTTPS 的优势毋庸置疑，但签发 HTTPS 证书是一件非常麻烦的事�
 
 因为上 HTTPS 很麻烦，自然就不想上。那么倘若有一种方法可以一劳永逸地解决这个问题，让你一次配置，幸福一生，那自然是十分愿意尝试的。（特别是舍友已经在阿里云上十分简单的搞定了这件事）
 
-这种解决方案叫做 [`ACME`]('https://datatracker.ietf.org/doc/html/rfc8555') (Automatic Certificate Management Environment)，自动向 [Let’s Encrypt](https://letsencrypt.org/zh-cn/about/) 申请启用 HTTPS（SSL/TLS）所需的数字证书，[工作原理](https://letsencrypt.org/zh-cn/how-it-works/#) 有兴趣者可以自行了解~
+这种解决方案叫做 [`ACME`]('https://datatracker.ietf.org/doc/html/rfc8555') (Automatic Certificate Management Environment)，自动向 [Let's Encrypt](https://letsencrypt.org/zh-cn/about/) 申请启用 HTTPS（SSL/TLS）所需的数字证书，[工作原理](https://letsencrypt.org/zh-cn/how-it-works/#) 有兴趣者可以自行了解~
 
 如果你直接翻阅 Let's Encrypt 的[快速入门](https://letsencrypt.org/zh-cn/getting-started/)，你可能就会开始下起 Certbot，看着一堆文档可能就很头疼。就算看起了文档，也觉得配置它是一件非常麻烦的事情。
 
@@ -40,7 +40,7 @@ HTTPS 的优势毋庸置疑，但签发 HTTPS 证书是一件非常麻烦的事�
 
 显然最为重要的环节就是定义好这个`证书签发器`，Traefik 为我们提供了 TLS 法、HTTP 法、DNS 法三种方法。从篇幅来看就知道，我们最好使用 DNS 法（`dnsChallenge`）。对于 DNS 法，Traefik 其实是采用了 [`lego`](https://go-acme.github.io/lego/) 这个 ACME 客户端。很**幸运**的是 lego 已经提供了腾讯云的支持，其编码为 `tencentcloud`。
 
-根据[文档]('https://go-acme.github.io/lego/dns/tencentcloud/')，我们需要准备 `TENCENTCLOUD_SECRET_ID` 和 `TENCENTCLOUD_SECRET_KEY` 这两个环境变量。我们在腾讯云的控制台中创建一对密钥，将它复制粘贴保存到本地的环境变量中。如果你是通过 docker 部署的Traefik 的话，仅需要在 docker-compose.yml 中加上：
+根据[文档](https://go-acme.github.io/lego/dns/tencentcloud/)，我们需要准备 `TENCENTCLOUD_SECRET_ID` 和 `TENCENTCLOUD_SECRET_KEY` 这两个环境变量。我们在腾讯云的控制台中创建一对密钥，将它复制粘贴保存到本地的环境变量中。如果你是通过 docker 部署的Traefik 的话，仅需要在 docker-compose.yml 中加上：
 
 ```yml
 environment:
