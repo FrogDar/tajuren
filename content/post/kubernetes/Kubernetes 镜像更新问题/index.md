@@ -1,3 +1,9 @@
+---
+title: "Kubernetes 镜像更新问题"
+date: 2022-06-04T12:34:56+08:00
+summary: "Kubernetes 中镜像名及标签没有更新时应当如何更新镜像？"
+tags: [cloud,kubernetes]
+---
 # Kubernetes 镜像更新问题
 
 ## 问题描述

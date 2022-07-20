@@ -1,3 +1,9 @@
+---
+title: "Istio 安装步骤"
+date: 2022-05-23T00:00:00+08:00
+summary: "Kubernetes 经典服务网格插件 istio 的安装步骤"
+tags: [cloud,kubernetes,istio]
+---
 # Istio 安装步骤
 
 > 主要参考资料：[官方文档](https://istio.io/latest/docs/setup/getting-started/)
@@ -84,7 +90,7 @@ istioctl dashboard kiali
 
 就可以在浏览器中访问啦~
 
-![image-20220523210411963](images/image-20220523210411963.png)
+![kiali效果图](kiali效果图.png)
 
 ## 清理示例应用
 

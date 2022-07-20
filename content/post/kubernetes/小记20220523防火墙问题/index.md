@@ -1,3 +1,10 @@
+---
+title: "小记20220523防火墙问题"
+date: 2022-05-24T00:00:00+08:00
+summary: "Windows 11中防火墙应当从`设置`中打开，否则看不到`域网络`防火墙，不要通过`控制面板`！"
+tags: [cloud,kubernetes]
+---
+
 # 小记20220523防火墙问题
 
 ## 问题症状
@@ -22,7 +29,7 @@ java.util.concurrent.ExecutionException: com.alibaba.nacos.shaded.io.grpc.Status
 
 可能需要介绍一下当前采取的方案，对于微服务的各个模块目前是是直接部署在 Kubernetes 里的，但是 `注册/配置中心` 以及 `openGauss` 数据库是利用 `docker` 外挂的，使用 IP 地址进行访问。（`docker` 将这些服务映射到本机的各个对应端口，但是 Istio 网关只接管了 `80` 端口）
 
-![image-20220605143711252](images/image-20220605143711252.png)
+![蛙软商城架构方案](images/蛙软商城架构方案.png)
 
 现在说明至少 `9848` 这个端口没有成功的访问上，那 `nacos` 中的基本页面 `8848` 能够访问嘛？
 
@@ -69,7 +76,7 @@ istioctl install --set meshConfig.outboundTrafficPolicy.mode=ALLOW_ANY
 
 使用 Istio 图形化面板的过程中，出现了一个额外的报错信息，大致是找不到 `10.96.0.10:53` 。但是这个地址十分特殊，因为我本身没有任何的印象，也没有在本地找到相关的网段。
 
-![image-20220524015951139](images/image-20220524015951139.png)
+![10.96.0.10](images/10.96.0.10.png)
 
 在网上搜索到相关 [Issue](https://github.com/istio/istio/issues/26354) ，告知我们  `10.96.0.10:53` 是 Kubernetes 的默认 DNS 服务器。那是不是因为连接不到 DNS 服务器所以导致无法连接？（但是实际上 通过 IP 来访问的话，和 DNS 本身应该是没有关系的，更可能是路由的过程中被阻断了）
 
@@ -85,7 +92,7 @@ istioctl install --set meshConfig.outboundTrafficPolicy.mode=ALLOW_ANY
 
 > 为什么特地强调是控制面板呢？因为这是一个坑……
 
-![image-20220524013812845](images/image-20220524013812845.png)
+![防火墙-控制面板](images/防火墙-控制面板.png)
 
 再次尝试，仍然无法成功运行蛙软商城的相关服务。
 
@@ -103,7 +110,7 @@ istioctl install --set meshConfig.outboundTrafficPolicy.mode=ALLOW_ANY
 
 使用 `busybox` 里的 `traceroute` 指令，检测路由访问情况：
 
-![image-20220524005414745](images/image-20220524005414745.png)
+![traceroute](images/traceroute.png)
 
 可以发现在走到 `minikube` 之后就找不到路由的下一跳了，根本走不到本机。
 
@@ -113,7 +120,7 @@ istioctl install --set meshConfig.outboundTrafficPolicy.mode=ALLOW_ANY
 
 但是明明在控制面板里关过防火墙呀？不过既然是 Windows11，那就试一试 `设置` 里的防火墙：
 
-![image-20220524005657817](images/image-20220524005657817.png)
+![防火墙-设置](images/防火墙-设置.png)
 
 好家伙，怎么还有一个 `域网络` 的防火墙？虽然没有使用中的标识，但是大胆猜测和这个东西有关。（根据贫瘠的计算机网络知识，这些东西肯定不是在一个域）
 
@@ -123,13 +130,13 @@ istioctl install --set meshConfig.outboundTrafficPolicy.mode=ALLOW_ANY
 
 不过还有一些遗留的小问题，比如访问 API 的时候还是没反应。虽然可以根据此前的相同命令获取到 `IP`、 `port`之类的信息，但估计和这个 `External IP` 是`<pending>` 还是有关系的。
 
-![image-20220524015707192](images/image-20220524015707192.png)
+![External IP](images/External IP.png)
 
 查阅网上资料，需要预先调用 `minikube tunnel` 进行流量代理，执行后果然能够正常运行。
 
 接口其实是可以正常访问的，用 Istio 查看图形化界面的时候出现了熟悉的老错误：
 
-![image-20220524015951139](images/image-20220524015951139.png)
+![10.96.0.10](images/10.96.0.10.png)
 
 使用命令查看 DNS 服务器的地址：
 
@@ -137,7 +144,7 @@ istioctl install --set meshConfig.outboundTrafficPolicy.mode=ALLOW_ANY
 kubectl get svc -n kube-system
 ```
 
-![image-20220524021636829](images/image-20220524021636829.png)
+![DNS](images/DNS.png)
 
 其实是一致的，但是为什么会报这样的错误呢？（暂时还不太理解，有无评论区用户指点一下）不过解决的时候，使劲滚动刷新几下，（莫名其妙地）折腾好了。
 

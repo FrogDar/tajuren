@@ -1,3 +1,9 @@
+---
+title: "Traefik 服务配置文件"
+date: 2022-07-05T19:19:19+08:00
+summary: "如何聪明优雅地为 Traefik 添加配置文件？从手工到环境变量到`tygen`"
+tags: [cloud,traefik,小工具]
+---
 # Traefik 服务配置文件
 
 > 相比于传统的 `nginx` 来说，使用 `Traefik` 作为反向代理服务器具有很多的优势。（这里就不详细展开，大家可以自行搜索、对比）

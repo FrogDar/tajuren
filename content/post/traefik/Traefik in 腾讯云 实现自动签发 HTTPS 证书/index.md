@@ -1,3 +1,9 @@
+---
+title: "Traefik in 腾讯云 实现自动签发 HTTPS 证书"
+date: 2022-04-04T21:21:21+08:00
+summary: "如何在Traefik中使用腾讯云的域名自动签发 HTTPS 证书？本当顺利的事情意外遇到大挫折！"
+tags: [cloud,traefik]
+---
 # Traefik in 腾讯云 实现自动签发 HTTPS 证书
 
 ## 背景
@@ -185,7 +191,7 @@ request.Subdomain = common.StringPtr(domainData.subDomain)
 
 我们将这个修复的代码发起 [Pull Request](https://github.com/go-acme/lego/pull/1616)，并成功被接受，将被集成至 lego v4.7。喜提 5.2k Star 项目的贡献者！（虽然用的是 CC 的号）
 
-![image-20220405034709437](images/image-20220405034709437.png)
+![lego仓库截图](lego.png)
 
 但是 lego 的 4.7 版本什么时候发布？不知道。发布以后 Traefik 什么时候集成？不知道。
 

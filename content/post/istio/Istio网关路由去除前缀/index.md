@@ -1,4 +1,10 @@
-# Istio网关路由去除前缀
+---
+title: "Istio 网关路由去除前缀"
+date: 2022-05-25T00:00:00+08:00
+summary: "现有若干服务，需要将符合某个特定前缀的路由指向特定的服务并将该前缀去除。"
+tags: [cloud,kubernetes,istio]
+---
+# Istio 网关路由去除前缀
 
 ## 需求
 

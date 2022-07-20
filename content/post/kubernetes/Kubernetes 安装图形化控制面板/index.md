@@ -1,3 +1,9 @@
+---
+title: "Kubernetes 安装图形化控制面板"
+date: 2022-05-23T19:40:00+08:00
+summary: "Kubernetes 安装图形化控制面板 V1.24.0 文档缺失时的特供版"
+tags: [cloud,kubernetes]
+---
 # Kubernetes 安装图形化控制面板
 
 ## 开启控制面板
