@@ -22,6 +22,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: Download Hugo Theme
+        run: | 
+          cd themes/github-style 
+          git pull
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
