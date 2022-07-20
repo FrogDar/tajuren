@@ -33,17 +33,17 @@
                 name="q" value="" placeholder="Search" autocomplete="off">
             </label>
           </form>
-          <script src="/jquery.min.js"></script>
-          <script language="javascript">
-            $('#search').on("submit", function () {
-              var search = $('#search-input').val();
-              if (search == '') {
-                alert('请输入搜索内容');
-                return false;
+
+          <script>
+            document.getElementById("search").addEventListener("submit", (e) => {
+              e.preventDefault()
+              const search = document.getElementById("search-input").value
+              if (!search) {
+                return false
               }
-              window.open('https://cn.bing.com/search?q=' + search + '+ site:' + {{ .Site.BaseURL }}, '_blank');
-            return false;
-            });
+              window.open('https://cn.bing.com/search?q=' + encodeURIComponent(search + ' + site:' + {{ .Site.BaseURL }}, '_blank'));
+            return false
+            })
           </script>
         </div>
       </div>
