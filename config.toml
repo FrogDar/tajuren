@@ -12,6 +12,7 @@ pygmentsUseClasses = true
   github = "FrogDar"
   email = "sheeplin@bupt.edu.cn"
   url = "https://tajuren.cn"
+  avatar = "/colorful-frog.png"
   keywords = "blog, google analytics"
   lastmod = true
   favicon = "/frogsoft.svg"
