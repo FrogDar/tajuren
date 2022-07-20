@@ -20,4 +20,4 @@ date: 2022-07-21T01:24:18+08:00
 
 ## 致谢
 
-七彩小蛙由我亲爱的舍友 [@charlie0129](https://github.com/charlie0129) 友情提供
+[七彩小蛙](/colorful-frog.png) 由我亲爱的舍友 [@charlie0129](https://github.com/charlie0129) 友情提供
