@@ -1,3 +1,9 @@
+---
+title: "简明 Vue2 教程"
+date: 2022-04-05T00:00:00+08:00
+summary: "即便 `Vue 3` 已经成为了 `Vue.js` 的默认版本，但我仍然觉得他有丶难用。"
+tags: ["Vue"]
+---
 # Simple Vue 2
 
 即便 `Vue 3` 已经成为了 `Vue.js` 的默认版本，但我仍然觉得他有丶难用。
@@ -6,8 +12,8 @@
 
 暂定的目录框架是
 - Pre - 预备知识
-- [Vue - `Vue.js` 的基本使用](/vue/vue)
-- [Vue Router - 多页面路由](/vue/router)
+- [Vue - `Vue.js` 的基本使用](../01vue)
+- [Vue Router - 多页面路由](../02router)
 - Vuex - 跨页面数据传输
 - UI - UI库（以 `Ant Design of Vue` 为例）
 - Axios - 网络传输相关

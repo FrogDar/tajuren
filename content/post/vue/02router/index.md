@@ -1,3 +1,9 @@
+---
+title: "Vue Router - 多页面路由"
+date: 2022-04-07T00:00:00+08:00
+summary: "Vue Router 是 [Vue.js](http://cn.vuejs.org/) 官方的路由管理器。它和 Vue.js 的核心深度集成，让构建单页面应用变得易如反掌。"
+tags: ["Vue"]
+---
 # Vue Router - 多页面路由
 
 > Vue Router 是 [Vue.js](http://cn.vuejs.org/) 官方的路由管理器。它和 Vue.js 的核心深度集成，让构建单页面应用变得易如反掌。
