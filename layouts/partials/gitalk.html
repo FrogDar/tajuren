@@ -1,0 +1,49 @@
+<!-- valine -->
+{{- if .Site.Params.valine.enable -}}
+<!-- id 将作为查询条件 -->
+<div class="container-lg px-3 new-discussion-timeline">
+  <div class="repository-content gist-content">
+    <div>
+      <div class="js-gist-file-update-container js-task-list-container file-box">
+        <div id="file-pytest" class="file my-2">
+          <!-- 方框头部 -->
+          <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header"
+            style="z-index: 2">
+            <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+              <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+
+                <span id="{{ .Page.Permalink }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
+                  <span class="leancloud-visitors-count" style="margin-left: 1vw">0</span> Views
+                  <p></p>
+                </span>
+
+              </div>
+            </div>
+          </div>
+          <!-- 方框内容 -->
+          <div class="Box-body px-5 pb-5" style="z-index: 1">
+            <div id="vcomments"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script type="text/javascript">
+  new Valine({
+    el: '#vcomments',
+    appId: '{{ .Site.Params.valine.appId }}',
+    appKey: '{{ .Site.Params.valine.appKey }}',
+    notify: {{ .Site.Params.valine.notify }},
+    verify: {{ .Site.Params.valine.verify }},
+    avatar: '{{ .Site.Params.valine.avatar }}',
+    placeholder: '{{ .Site.Params.valine.placeholder }}',
+    visitor: {{ .Site.Params.valine.visitor }},
+    enableQQ: {{ .Site.Params.valine.enableQQ }},
+    });
+</script>
+
+{{- end }}

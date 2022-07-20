@@ -1,0 +1,42 @@
+baseURL = "https://tajuren.cn"
+languageCode = "zh-cn"
+title = "塔居人"
+theme = "github-style"
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[params]
+  author = "塔居人"
+  description = "虽居于塔，不仅塔居"
+  github = "FrogDar"
+  email = "sheeplin@bupt.edu.cn"
+  url = "https://tajuren.cn"
+  avatar = "/colorful-frog.png"
+  keywords = "blog, google analytics"
+  lastmod = true
+  favicon = "/frogsoft.svg"
+  location = "Beijing, China"
+
+  [[params.links]]
+    title = "蛙软团队"
+    href = "https://github.com/frog-software"
+    icon = "https://avatars.githubusercontent.com/u/89686629?s=200&v=4"
+
+  [[params.links]]
+    title = "E方言"
+    href = "https://github.com/e-dialect"
+    icon = "https://avatars.githubusercontent.com/u/106298739?s=200&v=4"
+
+  [params.valine]
+    enable = true
+    appId = 'B7fPBSged1R1J69thumXHoNB-gzGzoHsz'
+    appKey = 'tB84HEkym86cyVJGYEMuY4Sw'
+    notify = false  # mail notifier , https://github.com/xCss/Valine/wiki
+    verify = false # Verification code
+    avatar = 'wavatar' 
+    placeholder = '说点什么吧...'
+    visitor = true
+    enableQQ = true
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]

@@ -18,6 +18,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.91.2'
+
+      - name: Build Hugo
+        run: hugo --minify
+
       - name: Tencent Cloud COS Action
         uses: TencentCloud/cos-action@v1
         with:
@@ -25,6 +38,6 @@ jobs:
           secret_key: ${{ secrets.TENCENT_CLOUD_SECRET_KEY }}
           cos_bucket: ${{ secrets.COS_BUCKET }}
           cos_region: ${{ secrets.COS_REGION }}
-          local_path: .
+          local_path: public
           remote_path: .
           clean: true
