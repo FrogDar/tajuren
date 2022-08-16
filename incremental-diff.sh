@@ -35,7 +35,9 @@ for ((i = 0; i < ${#FILE_LIST[@]}; i++)); do
     fi
     ACTUAL_SHA=$(sha256sum "${CURRENT_FILE}" | awk -F '  ' '{ print $1 }')
     if [[ "${ACTUAL_SHA}" == "${CURRENT_SHA}" ]]; then
-        echo "${CURRENT_FILE} hasn't changed since last update, will not be uploaded."
         rm -f "${CURRENT_FILE}"
     fi
 done
+
+echo "These files will be uploaded after diff:"
+find public -type f -exec echo "    {}" \;
