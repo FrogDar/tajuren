@@ -1,4 +1,4 @@
-name: Upload Static Files to COS (Full)
+name: Upload Static Files (Full)
 
 on:
   schedule:

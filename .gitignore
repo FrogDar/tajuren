@@ -6,3 +6,4 @@ public
 *.lock
 resources
 assets/jsconfig.json
+sha256sum.txt

@@ -1,4 +1,4 @@
-name: Upload Static Files to COS (Diff)
+name: Upload Static Files (Diff)
 
 on:
   push:
