@@ -528,4 +528,4 @@ export default {
 };
 ```
 
-![Vue 2 生命周期](https://cn.vuejs.org/images/lifecycle.png)
+![Vue 2 生命周期](./images/lifecycle.png)
