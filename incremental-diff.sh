@@ -41,3 +41,5 @@ done
 
 echo "These files will be uploaded after diff:"
 find public -type f -exec echo "    {}" \;
+echo -n "Total size: "
+du -sh public | awk '{ print $1 }'
