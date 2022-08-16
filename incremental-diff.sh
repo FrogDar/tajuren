@@ -29,6 +29,9 @@ SHA_LIST=($(cat "${PREVIOUS_SHA_FILE}" | awk -F '  ' '{ print $1 }'))
 for ((i = 0; i < ${#FILE_LIST[@]}; i++)); do
     CURRENT_FILE="${FILE_LIST[$i]}"
     CURRENT_SHA="${SHA_LIST[$i]}"
+    if [ ! -f "${CURRENT_FILE}" ]; then
+        continue
+    fi
     ACTUAL_SHA=$(sha256sum "${CURRENT_FILE}" | awk -F '  ' '{ print $1 }')
     if [[ "${ACTUAL_SHA}" == "${CURRENT_SHA}" ]]; then
         echo "${CURRENT_FILE} hasn't changed since last update, will not be uploaded."
