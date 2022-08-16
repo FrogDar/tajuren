@@ -27,16 +27,14 @@ jobs:
         run: hugo --minify
 
       - name: Calculate SHA256
-        run: |
-          find public -type f -exec sha256sum {} \; > public/sha256sum.txt
+        run: find public -type f -exec sha256sum {} \; > public/sha256sum.txt
       
       - name: Download Previous SHA256
-        run: |
-          curl -fsSl https://tajuren.cn/sha256sum.txt -o sha256sum.txt || touch sha256sum.txt
+        run: curl -fsSl https://tajuren.cn/sha256sum.txt -o sha256sum.txt || touch sha256sum.txt
 
       - name: Calculate Diff and Minimize Upload Size
-        run: |
-          ./incremental-diff.sh
+        run: "[ -f sha256sum.txt ] && ./incremental-diff.sh"
+          
 
       - name: Upload Static Files to COS
         uses: TencentCloud/cos-action@v1

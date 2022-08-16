@@ -26,8 +26,7 @@ jobs:
         run: hugo --minify
 
       - name: Calculate SHA256
-        run: |
-          find public -type f -exec sha256sum {} \; > public/sha256sum.txt
+        run: find public -type f -exec sha256sum {} \; > public/sha256sum.txt
 
       - name: Upload Static Files to COS
         uses: TencentCloud/cos-action@v1
