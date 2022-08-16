@@ -1,5 +1,7 @@
 # 塔居人
 
+[![Upload Static Files (Diff)](https://github.com/FrogDar/tajuren/actions/workflows/cos-diff.yml/badge.svg?branch=master)](https://github.com/FrogDar/tajuren/actions/workflows/cos-diff.yml)
+
 > 虽居于塔，不仅塔居
 
 ## 简介
