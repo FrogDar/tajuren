@@ -4,10 +4,11 @@ title = "塔居人"
 theme = "github-style"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
+enableGitInfo = true
 
 [markup.goldmark.renderer]
   unsafe= true
-  
+
 [params]
   author = "塔居人"
   description = "虽居于塔，不仅塔居"
@@ -40,4 +41,4 @@ pygmentsUseClasses = true
     enableQQ = true
 
 [frontmatter]
-  lastmod = ["lastmod", ":fileModTime", ":default"]
+  lastmod = ["lastmod", ":git", "date", "publishDate"]
