@@ -29,9 +29,7 @@ SHA_LIST=($(cat "${PREVIOUS_SHA_FILE}" | awk -F '  ' '{ print $1 }'))
 
 for ((i = 0; i < ${#FILE_LIST[@]}; i++)); do
     CURRENT_FILE="${FILE_LIST[$i]}"
-    echo "$CURRENT_FILE"
     CURRENT_SHA="${SHA_LIST[$i]}"
-    echo "$CURRENT_SHA"
     if [ ! -f "${CURRENT_FILE}" ]; then
         continue
     fi
