@@ -85,6 +85,12 @@
                   </div>
                 </div>
               </div>
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg">
+                  {{- .Content -}}
+                </article>
+              </div>
             </div>
           </div>
         </div>
@@ -94,8 +100,7 @@
 </div>
 <script type="application/javascript" src='{{ "js/toc.js" | absURL }}'></script>
 <link rel="stylesheet" href='{{ "css/toc.css" | absURL }}' />
-<div class="Box-body px-5 pb-5" style="z-index: 1">
-  
+
 <!-- KaTeX -->
 <link rel="stylesheet" href="//unpkg.com/browse/katex@0.16.0/dist/katex.min.css">
 <script src="//unpkg.com/browse/katex@0.16.0/dist/katex.min.js"> </script>
@@ -106,7 +111,3 @@
     renderMathInElement(document.body);
   });
 </script>
-<article class="markdown-body entry-content container-lg">
-  {{- .Content -}}
-</article>
-</div>
