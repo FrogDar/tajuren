@@ -68,19 +68,6 @@
                       <em class="post-meta-item-text"> Views </em>
                       <p></p>
                     </span>
-                    <!-- <script src="//unpkg.com/leancloud-storage@3/dist/av-min.js"></script>
-                    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-                    <script type="text/javascript">
-                      new Valine({
-                        el: '#vcomments',
-                        appId: '{{ .Site.Params.valine.appId }}',
-                        appKey: '{{ .Site.Params.valine.appKey }}',
-                        avatar: '{{ .Site.Params.valine.avatar }}',
-                        placeholder: '{{ .Site.Params.valine.placeholder }}',
-                        visitor: {{ .Site.Params.valine.visitor }},
-                        enableQQ: {{ .Site.Params.valine.enableQQ }},
-                       });
-                    </script> -->
                   </div>
                   <div class="file-actions flex-order-2 pt-0">
                     {{ with .Params.tags }}
@@ -98,23 +85,6 @@
                   </div>
                 </div>
               </div>
-
-
-              <div class="Box-body px-5 pb-5" style="z-index: 1">
-                <!-- KaTeX -->
-                <link rel="stylesheet" href="/katex/katex.min.css">
-                <script src="/katex/katex.min.js"> </script>
-                <script src="/katex/contrib/auto-render.min.js"></script>
-
-                <script>
-                  document.addEventListener("DOMContentLoaded", function () {
-                    renderMathInElement(document.body);
-                  });
-                </script>
-                <article class="markdown-body entry-content container-lg">
-                  {{- .Content -}}
-                </article>
-              </div>
             </div>
           </div>
         </div>
@@ -124,3 +94,19 @@
 </div>
 <script type="application/javascript" src='{{ "js/toc.js" | absURL }}'></script>
 <link rel="stylesheet" href='{{ "css/toc.css" | absURL }}' />
+<div class="Box-body px-5 pb-5" style="z-index: 1">
+  
+<!-- KaTeX -->
+<link rel="stylesheet" href="//unpkg.com/browse/katex@0.16.0/dist/katex.min.css">
+<script src="//unpkg.com/browse/katex@0.16.0/dist/katex.min.js"> </script>
+<script src="//unpkg.com/browse/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body);
+  });
+</script>
+<article class="markdown-body entry-content container-lg">
+  {{- .Content -}}
+</article>
+</div>
