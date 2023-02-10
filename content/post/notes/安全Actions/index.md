@@ -1,6 +1,6 @@
 ---
 title: "安全 Actions"
-date: 2022-02-10T23:09:11+08:00
+date: 2023-02-10T23:09:11+08:00
 summary: "在执行 GitHub Actions 过程中可能会遇到权限问题，我们可以通过拆分工作流来解决"
 tags: [notes]
 ---
