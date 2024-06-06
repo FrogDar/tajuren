@@ -1,6 +1,6 @@
 ### 你好 👋
 
-- 🏫 北邮准研零
+- 🏫 北邮2023届软件工程专业本科生，计算机科学与技术博士进度1/5
 - 🔭 四处摸鱼中
 - 🌱 搞搞云，搞搞计算机网络，搞搞乱七八糟的
 - 📫 欢迎交流 [sheeplin@bupt.edu.cn](mailto:sheeplin@bupt.edu.cn)
@@ -20,8 +20,8 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=FrogDar&layout=compact&langs_count=6&card_width=445)](https://github.com/FrogDar/FrogDar)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=lin594&layout=compact&langs_count=6&card_width=445)](https://github.com/lin594/lin594)
 
 ### 近七日摸鱼状况
 
-[![FrogDar's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=FrogDar&layout=compact&theme=buefy)](https://github.com/FrogDar/FrogDar)
+[![lin594's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=lin594&layout=compact&theme=buefy)](https://github.com/lin594/lin594)
